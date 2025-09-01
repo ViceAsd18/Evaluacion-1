@@ -4,56 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assests/style.css">
 </head>
 <body>
     
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid justify-content-around">
-
-            <div class="container-nav-home">
-                <a class="navbar-brand" href="home.html">Home</a>
-                <img src="assests/img/nav/hogar.png" width="25px" alt="Home">
-            </div>
+    <nav>
+        <div class="container-navbar">
+            <a href="home.html" class="link-home">
+                Home <img src="assests/img/nav/hogar.png" alt="Home">
+            </a>
             <h2>GUAU&MIAU</h2>
-            <button class="btn btn-primary">Iniciar sesión</button>
+            <button onclick="location.href='login.html'" class="btn-navbar">Iniciar sesión</button>
         </div>
     </nav>
 
 
 
- <div class="formulario">
-    <div class="titulo-formulario">
-        <h2>ACCEDE A TU CUENTA</h2>
-    </div>
+    <div class="container-formulario">
+        <div class="titulo-formulario">
+            <h2>ACCEDE A TU CUENTA</h2>
+        </div>
         <form action="#" id="formulario">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="input-text" required>
             </div>
 
-            <div class="mb-3">
-                <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <div class="input-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" class="input-text">
             </div>
-            
+
             <div class="olvidar-contraseña">
-                <a href="">olvidaste tu contraseña</a>
+                <a href="#">Olvidates tu contraseña</a>
             </div>
 
             <div class="btn-form">
-                <button type="submit" class="btn btn-success" id="btn-enviar">Iniciar sesión</button>
+                <button type="submit" class="btn-login" id="btn-enviar">Iniciar sesión</button>
             </div>
 
             <div class="crear-cuenta">
-                <a href="">¿No tiene una cuenta? Cree una aqui</a>
+                <a href="#">¿No tienes una cuenta? Cree una aqui</a>
             </div>
-
 
         </form>
     </div>
+
+
 
 
     <footer>
