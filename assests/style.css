@@ -1,0 +1,63 @@
+/*
+navbar
+*/
+.container-nav-home {
+    display: flex;
+    align-items: center;
+}
+
+.container-nav-home img{
+    width: 2rem;
+    height: 2rem;
+
+}
+
+
+
+
+.container-fluid {
+    background-color: #60b99a;
+    padding: 1rem;
+}
+
+/*Login*/
+.formulario {
+    width: 55%;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.olvidar-contraseña {
+    text-align: center;
+}
+
+.olvidar-contraseña a {
+    text-decoration: none;
+    color: green;
+}
+
+
+.btn-form{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-form button {
+    width: 10rem;
+    height: 3.5rem;
+    margin: 0.5rem;
+    border-radius: 35px;
+}
+
+
+
+.crear-cuenta {
+    text-align: center;
+}
+
+.crear-cuenta a{
+    text-decoration: none;
+    color: green;
+}
+
