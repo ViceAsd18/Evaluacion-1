@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
@@ -177,12 +180,69 @@ nav {
 
 
 /*Footer*/
-footer{
-    background-color: #60b99a ;
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 
+ footer{
+     background-color: #60b99a ;
+     text-align: center;
+     padding: 1.5rem 1rem; /* Se colocan dos para que no se vea el margen blanco abajo del footer */
+     bottom: 0;
+     width: 100%;
+ }
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /*para q no se desborden los elementos y se vayan apilando*/
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 15px;
+    gap: 30px;
+}
+
+footer img{ /*no sé que cambia la vdd*/
+    margin-bottom:20px;
+    max-width:100% ;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #dc1b52;
+    padding-bottom: 8px;
+}
+
+.footer-section p {
+    color: #f5f9fc;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    /*Para eliminar los rellenos y estilos por defecto*/
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    /*Para la transición entre el blanco y el rojo de los textos*/
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #dc1b52;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
 }
