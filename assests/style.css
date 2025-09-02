@@ -21,7 +21,9 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    
+        text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
 }
 
 .link-home img{
@@ -32,11 +34,6 @@ nav {
     color: black;
 }
 
-.link-home {
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: black;
-}
 
 
 
@@ -77,7 +74,7 @@ nav {
 /*Login*/
 .container-formulario {
     width: 350px;
-    margin: 2rem auto;
+    margin: 8rem auto;
     padding: 2.5rem;
     background-color: #f2f2f2;
     border-radius: 8px;
@@ -114,6 +111,8 @@ nav {
 .input-group label {
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
 }
 
 .input-text {
@@ -121,7 +120,17 @@ nav {
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    border: 2px solid gray;
+    border-radius: 40px;
+    padding: 0.7rem;  
+
 }
+
+.input-text:hover{
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Sombra más suave cuando el input está en hover */
+
+}
+
 
 .olvidar-contraseña {
     text-align: center;
@@ -167,4 +176,13 @@ nav {
 
 
 
+/*Footer*/
+footer{
+    background-color: #60b99a ;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
+}
