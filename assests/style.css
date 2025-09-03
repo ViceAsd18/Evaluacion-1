@@ -24,7 +24,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-        text-decoration: none;
+    text-decoration: none;
     font-size: 1.5rem;
     color: black;
 }
@@ -176,11 +176,18 @@ nav {
     color: green;
 }
 
-
+/*Registro*/
+.container-formulario-registro {
+    width: 350px;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 
 /*Footer*/
-
  footer{
      background-color: #60b99a ;
      text-align: center;
