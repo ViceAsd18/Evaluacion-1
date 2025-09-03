@@ -1,5 +1,14 @@
 const { useDebugValue } = require("react");
 
+var usuarios = [
+    {
+        "nombre":"admin",
+        "email":"admin@duoc.cl",
+        "contraseña":"@Admin123"
+    }
+];
+
+
 function validarEmail(){
     const email = document.getElementById("email").value;
     let regex = /^[a-zA-Z0-9._-]+@duoc\.cl$/;
@@ -17,7 +26,7 @@ function validarEmail(){
 
 }
 function validarContraseña(){
-    const password = document.getElementById("password").value;    
+    const password = document.getElementById("contraseña").value;    
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%])[A-Za-z\d@#$%]{8,}$/;
     //?=.*[a-z] al menos una letra minuscula
     //(?=.*[A-Z] al menos una mayuscula
@@ -43,6 +52,7 @@ function validarContraseña(){
                     } else {
                       alert("Contraseña valida:D");
                       return true;
+    }
 }
 function confirmarContraseña(){
     const passwordX2 = document.getElementById("PasswordX2").value;
@@ -54,7 +64,7 @@ function confirmarContraseña(){
 }
 function validarTelofono(){
     const telefonoUsr = document.getElementById("telefonoUsr");
-        if (telefonoUsr.length = 8){
+        if (telefonoUsr.length === 8){
             return true
 
         }else{
@@ -69,8 +79,40 @@ function agregarUsrPrueba(){
 }
 
 
-
+function emailExiste(email) {
+    for (var i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].email === email) {
+            return true; // Email encontrado
+        }
+    }
+    return false; // Email no encontrado
 }
+
+
+function mostrarToast(mensaje) {
+    const toast = document.getElementById("toast");
+    toast.textContent = mensaje;
+    toast.className = "toast mostrar";
+
+    setTimeout(() => {
+        toast.className = "toast"; // oculta después de 3 segundos
+    }, 3000);
+}
+
+//Esto es de prueba para ver si el mensaje de inicio de sesion aparece
+function validarLogin() {
+    const emailValido = validarEmail();
+    const contraseñaValida = validarContraseña();
+
+    if (!emailValido || !contraseñaValida) {
+        return false;
+    }
+
+    mostrarToast("Sesión iniciada correctamente");
+    return true;
+}
+
+
 
 
    
