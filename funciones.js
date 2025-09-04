@@ -1,13 +1,3 @@
-const { useDebugValue } = require("react");
-
-var usuarios = [
-    {
-        "nombre":"admin",
-        "email":"admin@duoc.cl",
-        "contraseña":"@Admin123"
-    }
-];
-
 
 function validarEmail(){
     const email = document.getElementById("email").value;
@@ -99,25 +89,58 @@ function mostrarToast(mensaje) {
     }, 3000);
 }
 
-//Esto es de prueba para ver si el mensaje de inicio de sesion aparece
-function validarLogin() {
-    const emailValido = validarEmail();
-    const contraseñaValida = validarContraseña();
-
-    if (!emailValido || !contraseñaValida) {
-        return false;
-    }
-
-    mostrarToast("Sesión iniciada correctamente");
-    return true;
-}
 
 
 
-
-   
-
-
-
+// capturar a los elementos del formulario de mascotas
+const btnAgregar = document.getElementById("btn-agregar"); // botón "Agregar mascota"
+const listaMascotas = document.getElementById("lista-mascotas"); // contenedor donde se insertan las card para agregar mascotas
 
 
+//captura cuando se hace clic en el botón "Agregar mascota"
+btnAgregar.addEventListener("click", () => {
+
+    // Crear un contenedor (card) para la mascota
+    const card = document.createElement("div");
+    card.className = "mascota-card"; //Se le asigna la clase "mascota-card" para los estilos
+
+    /*
+    Agregar el contenido HTML a la card:
+      - Input para nombre de la mascota
+      - Select para tipo de mascota
+      - Botón "Eliminar" para quitar la card
+
+        IMPORTANTE: en los atributos name se usan corchetes []:
+            name="nombreMascota[]"
+            name="tipoMascota[]"
+            Esto por que el formulario puede tener múltiples valores 
+            con el mismo nombre, y el backend los recibirá como LISTAS.
+        Ejemplo de envío:
+            nombreMascota[] = ["Firulais", "Michi"]
+            tipoMascota[]   = ["Perro", "Gato"]
+    */
+    card.innerHTML = `
+                    <div class="input-group">
+                        <label>Nombre de la mascota</label>
+                        <input type="text" class="input-text" name="nombreMascota[]" required>
+                    </div>
+
+                    <div class="input-group container-tipo-mascota">
+                        <label>Tipo de mascota</label>
+                        <select class="input-text" name="tipoMascota[]" required>
+                            <option value="">Seleccione un tipo de animal</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <button type="button" class="btn-eliminar">Eliminar</button>
+                    </div>
+                    `;
+//  Asignar funcionalidad al botón "Eliminar":
+//  cuando se hace clic, elimina solo esta card de mascota
+card.querySelector(".btn-eliminar").addEventListener("click", () => card.remove());
+
+// Insertar la nueva card en el contenedor de la lista
+listaMascotas.appendChild(card);
+});

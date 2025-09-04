@@ -11,6 +11,10 @@ navbar
 */
 nav {
     background-color: #60b99a;
+    position: sticky;      /* Navbar fijo en la parte superior al hacer scroll */
+    top: 0;               /* pegado arriba */
+    width: 100%;          /* ocupa todo el ancho */
+    z-index: 1000;        /* por encima del resto */
 }
 
 .container-navbar {
@@ -84,11 +88,6 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-login {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    background-color: #0d6efd;
-}
 
 .formulario {
     width: 55%;
@@ -148,6 +147,7 @@ nav {
 .btn-form {
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .btn-login {
@@ -202,7 +202,7 @@ nav {
 
 /*Registro*/
 .container-formulario-registro {
-    width: 350px;
+    width: 500px;
     margin: 2.5rem auto;
     padding: 2.5rem;
     background-color: #f2f2f2;
@@ -210,6 +210,63 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+.container-form-mascota {
+    margin-top: 3rem;
+}
+
+.header-registro-mascota {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-agregar {
+    width: 10rem;
+    height: 3.5rem;
+    margin: 0.5rem;
+    border-radius: 35px;
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-eliminar {
+    width: 10rem;
+    height: 3.5rem;
+    margin: 0.5rem;
+    border-radius: 35px;
+    background-color: rgb(201, 38, 38);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+.mascota-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+
+.container-tipo-mascota .input-text {
+    width: 60%;
+}
+
+#tipo-mascota {
+    width: 55%;
+    height: 80%;
+}
+
+#btn-registrarse {
+    margin-top: 2rem;
+}
 
 /*Footer*/
  footer{
