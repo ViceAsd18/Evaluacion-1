@@ -1,60 +1,52 @@
-
-function validarEmail(){
-    const email = document.getElementById("email").value;
+function validarEmail() {
+    const email = document.getElementById("reg-email").value;
     let regex = /^[a-zA-Z0-9._-]+@duoc\.cl$/;
     //[a-zA-Z0-9._-] validar masyuculas, minusculas , numeros y carecteres
     // + @ validar que tenga el arroba
     // duoc valida si es de la intitucion
     // .cl el domininio debe ser si o si .cl
     if (regex.test(email)) {
-        alert("Su email es totalmete valido")
-        return true;  
-    } else {
-        alert("su email no es valido")
-        return false;  
-    }
-
-}
-function validarContraseña(){
-    const password = document.getElementById("contraseña").value;    
-    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%])[A-Za-z\d@#$%]{8,}$/;
-    //?=.*[a-z] al menos una letra minuscula
-    //(?=.*[A-Z] al menos una mayuscula
-    //(?=.*\d) al menos 1 numero 
-    // ?=.*[@#$%] al menos uno de estos caracteres [@#$%]
-    //A-Za-z\d@#$%]{8,} solo permite 8 letras tomanso todo lo anterior
-
-    if (password.length < 8) {
-    alert("La contraseña debe tener al menos 8 caracteres");
-    return false;
-    } else if (!/[A-Z]/.test(password)) {
-          alert("La contraseña debe contener al menos una letra mayuscula");
-          return false;
-        } else if (!/[a-z]/.test(password)) {
-              alert("La contraseña debe contener al menos una letra minuscula");
-              return false;
-            } else if (!/\d/.test(password)) {
-                    alert("La contraseña debe contener al menos un numero");
-                    return false;
-                } else if (!/[@#$%]/.test(password)) {
-                     alert("La contraseña debe contener al menos un carácter especial");
-                     return false;
-                    } else {
-                      alert("Contraseña valida:D");
-                      return true;
-    }
-}
-function confirmarContraseña(){
-    const passwordX2 = document.getElementById("PasswordX2").value;
-    if (passwordX2 === password){
         return true;
-    }else{
-        alert("La contraseña no coincide:( ")
+    } else {
+        alert("El email debe ser de la institución (@duoc.cl)");
+        return false;
+    }
+}
+ 
+function validarContraseña() {
+    const password = document.getElementById("reg-password").value;
+    if (password.length < 8) {
+        alert("La contraseña debe tener al menos 8 caracteres");
+        return false;
+    } else if (!/[A-Z]/.test(password)) {
+        alert("La contraseña debe contener al menos una letra mayúscula");
+        return false;
+    } else if (!/[a-z]/.test(password)) {
+        alert("La contraseña debe contener al menos una letra minúscula");
+        return false;
+    } else if (!/\d/.test(password)) {
+        alert("La contraseña debe contener al menos un número");
+        return false;
+    } else if (!/[@#$%]/.test(password)) {
+        alert("La contraseña debe contener al menos un carácter especial (@#$%)");
+        return false;
+    }
+    return true;
+}
+
+function confirmarContraseña() {
+    const password = document.getElementById("reg-password").value;
+    const passwordX2 = document.getElementById("confirm-password").value;
+    if (passwordX2 === password) {
+        return true;
+    } else {
+        alert("La contraseña no coincide");
+        return false;
     }
 }
 function validarTelofono(){
-    const telefonoUsr = document.getElementById("telefonoUsr");
-        if (telefonoUsr.length === 8){
+    const telefonoUsr = document.getElementById("telefonoUsr").value.trim;
+        if (telefonoUsr.length === 0 || telefonoUsr.length === 8){
             return true
 
         }else{
@@ -62,10 +54,55 @@ function validarTelofono(){
             return false;
         }
 } 
-function agregarUsrPrueba(){
-    usuarios= {
-         email: password,
+function register(){
+    //obtenemos los inpust
+    // el .value obtiene lo que escribio el usuario
+    //el .trim() limpia espacios extra al inicio y al final
+    const nombre = document.getElementById("reg-nombre").value.trim();
+    const correo = document.getElementById("reg-email").value.trim();
+    const password = document.getElementById("reg-password").value.trim();
+    const confirmPassword = document.getElementById("confirm-password").value.trim();
+    //validar que los campos 
+    
+    if(!validarEmail()) return; 
+    if(!validarContraseña()) return; 
+    if(!confirmarContraseña()) return;
+    if(!validarTelofono()) return;
+
+    //creo la "base de datos" con una lista
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
+    //valido que el correo no este ya registrado
+    if (usuarios.find(u => correo)){
+        alert("Usuario registrado correctamente")
     }
+    //agrego al nuevo usuario
+    usuarios.push({nombre:nombre,correo:correo,password:password})
+    //guardamos y actualizamos a JSON
+    localStorage.setItem("usuarios",JSON.stringify(usuarios))
+    alert("Usuario registrado")
+
+    
+}
+//para comprobar que se registro: f12 te vas a consola y escribes localStorage.getItem("usuarios")
+//y deberia aparecer esto [{"correo":"juan.perez@duoc.cl","password":"Juan2025@"}]'
+
+function login(){
+    const correolog = document.getElementById("log-email").value.trim();
+    const passwordlog = document.getElementById("log-password").value.trim();
+    //obtengo la lista
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
+
+    //Buscaamos
+    const usuario = usuarios.find(u => u.correo === correolog && u.password === passwordlog); // y si u (usuarios) concicide con su busqueda, entrara  
+    if(usuario){
+        alert("Bienvenido "+ usuario.nombre +"y a " + card)
+
+    }else{
+        alert("Correo o contraseña incorrecta")
+    }
+    
+
+
 }
 
 
@@ -143,4 +180,4 @@ card.querySelector(".btn-eliminar").addEventListener("click", () => card.remove(
 
 // Insertar la nueva card en el contenedor de la lista
 listaMascotas.appendChild(card);
-});
+})
