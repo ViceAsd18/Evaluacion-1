@@ -66,13 +66,78 @@ nav {
 }
 
 
+/*Home*/
+
+/* hero para priorizar info en el home */
+.hero {
+    height: 70vh;
+    margin-top: 1rem;
+    background: url("img/img-banner.jpg") 50% 65% no-repeat ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero-content {
+    margin-top:2rem;
+    background: rgba(89, 78, 78, 0.5);
+    padding: 4rem;
+    border-radius: 10px;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Protest Riot', cursive, 'Segoe UI', Arial, sans-serif;}
+.hero p {
+    font-size: 1.2rem;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.hero .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #ff914d;
+    padding: 0.7rem 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* PRODUCTOS DESTACADOS */
+.productos {
+    padding: 2rem;
+    text-align: center;
+}
+.productos h2 {
+    margin-bottom: 1rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background: #fff;
+}
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+.card p {
+    font-weight: bold;
+    color: #ff914d;
+}
 
 
 
-
-
-
-    
 
 
 
@@ -268,46 +333,50 @@ nav {
     margin-top: 2rem;
 }
 
-/*Footer*/
+Footer,
  footer{
      background-color: #60b99a ;
      text-align: center;
-     padding: 1.5rem 1rem; /* Se colocan dos para que no se vea el margen blanco abajo del footer */
+     padding: 1.5rem 1rem; /* Se colocan dos para que no se vea el margen blanco abajo del footer*/
      bottom: 0;
      width: 100%;
  }
 
 .container {
     display: flex;
+    width: 100%;
     flex-wrap: wrap; /*para q no se desborden los elementos y se vayan apilando*/
     justify-content: space-between;
     margin: 0 auto;
     padding: 0 15px;
-    gap: 30px;
+    gap: 40px;
+}
+/* --------------- ME FALTA TERMINAR DE EDITAR ------------ */
+footer img{ /*ajustes del logo-footer*/
+    display: flex;
+    margin-bottom:10px;
+    max-width:100% ;
+    vertical-align: center;
 }
 
-footer img{ /*no sé que cambia la vdd*/
-    margin-bottom:20px;
-    max-width:100% ;
-}
 
 .footer-section {
     flex: 1;
-    margin: 15px 0;
+    margin: 10px 0;
     text-align: left;
 }
 
 .footer-section h4 {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
     color: #dc1b52;
-    padding-bottom: 8px;
+    padding-bottom: 1px;
 }
 
 .footer-section p {
     color: #f5f9fc;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .footer-section ul {
@@ -329,7 +398,7 @@ footer img{ /*no sé que cambia la vdd*/
 
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 14px;
     border-top: 1px solid #444;
     padding-top: 10px;
