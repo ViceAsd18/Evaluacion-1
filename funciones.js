@@ -95,10 +95,9 @@ function login(){
     //Buscaamos
     const usuario = usuarios.find(u => u.correo === correolog && u.password === passwordlog); // y si u (usuarios) concicide con su busqueda, entrara  
     if(usuario){
-        alert("sesion iniciada " + usuario.nombre)
-
+        mostrarToast('Sesion iniciada correctamente','green')
     }else{
-        alert("Correo o contraseña incorrecta")
+        mostrarToast('Correo o contraseña incorrecta','red')
     }
     
 }
@@ -129,9 +128,10 @@ function savePassword() {
 
 
 
-function mostrarToast(mensaje) {
+function mostrarToast(mensaje,color) {
     const toast = document.getElementById("toast");
     toast.textContent = mensaje;
+    toast.style.backgroundColor = color
     toast.className = "toast mostrar";
 
     setTimeout(() => {
