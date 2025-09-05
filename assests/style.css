@@ -335,15 +335,33 @@ nav {
     margin-top: 2rem;
 }
 
+/*Recuperar*/
+.volver-login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.volver-login a {
+    text-decoration: none;
+    color: green;
+}
+
+
 Footer,
  footer{
-     background-color: #60b99a ;
-     text-align: center;
-     padding: 1.5rem 1rem; /* Se colocan dos para que no se vea el margen blanco abajo del footer*/
-     bottom: 0;
-     width: 100%;
- }
+    background-color: #60b99a ;
+    text-align: center;
+    padding: 1.5rem 1rem; /* Se colocan dos para que no se vea el margen blanco abajo del footer*/
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 
+}
+
+
+
+
+ 
 .container {
     display: flex;
     width: 100%;
