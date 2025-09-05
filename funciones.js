@@ -95,16 +95,36 @@ function login(){
     //Buscaamos
     const usuario = usuarios.find(u => u.correo === correolog && u.password === passwordlog); // y si u (usuarios) concicide con su busqueda, entrara  
     if(usuario){
-        alert("sesion iniciada " + nombre)
+        alert("sesion iniciada " + usuario.nombre)
 
     }else{
         alert("Correo o contraseña incorrecta")
     }
     
-
-
 }
 
+function savePassword() {
+    const saveEmail = document.getElementById("reset-email").value.trim();
+    const newPassword = document.getElementById("new-password").value.trim();
+    const newX2Password = document.getElementById("confirm-password").value.trim();
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Comprobar si la contraseña confirmada coincide
+    if (newPassword !== newX2Password) {
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
+    const usuario = usuarios.find(u => u.correo === saveEmail);
+
+    if (usuario) {
+        usuario.password = newPassword;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        alert("Contraseña actualizada correctamente");
+    } else {
+        alert("El correo no está registrado");
+    }
+}
 
 
 
