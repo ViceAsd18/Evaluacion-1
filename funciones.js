@@ -95,7 +95,7 @@ function login(){
     //Buscaamos
     const usuario = usuarios.find(u => u.correo === correolog && u.password === passwordlog); // y si u (usuarios) concicide con su busqueda, entrara  
     if(usuario){
-        alert("Bienvenido "+ usuario.nombre +"y a " + card)
+        alert("sesion iniciada " + nombre)
 
     }else{
         alert("Correo o contraseña incorrecta")
@@ -106,14 +106,7 @@ function login(){
 }
 
 
-function emailExiste(email) {
-    for (var i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].email === email) {
-            return true; // Email encontrado
-        }
-    }
-    return false; // Email no encontrado
-}
+
 
 
 function mostrarToast(mensaje) {
@@ -181,3 +174,17 @@ card.querySelector(".btn-eliminar").addEventListener("click", () => card.remove(
 // Insertar la nueva card en el contenedor de la lista
 listaMascotas.appendChild(card);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+

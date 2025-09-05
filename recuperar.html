@@ -21,20 +21,32 @@
     </header>
 
     <main>
-        <div class="container-formulario">
+        <div class="container-formulario" id="container-form-recuperar">
             <div class="titulo-formulario">
                 <h2>RECUPERAR CONTRASEÑA</h2>
             </div>
 
             <form action="#" id="form-recuperar" novalidate>
+
+            <div class="container-campos">
                 <div class="input-group">
                     <label for="reset-email">Email</label>
                     <input type="email" id="reset-email" class="input-text" required>
                 </div>
+                
+            <div class="input-group">
+                <label for="new-password">Nueva Contraseña</label>
+                <input type="password" id="new-password" class="input-text" required>
+            </div>
 
+            <div class="input-group">
+                <label for="confirm-password">Confirmar Contraseña</label>
+                <input type="password" id="confirm-password" class="input-text" required>
+            </div>
+            </div>
 
                 <div class="btn-form">
-                    <button type="button" class="btn-login">Enviar</button>
+                    <button type="button" class="btn-login" id="btn-recuperar">Enviar</button>
                 </div>
 
             <div class="volver-login">
